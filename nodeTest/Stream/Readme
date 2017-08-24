@@ -1,0 +1,6 @@
+/*  stream流,是一个抽象接口.eg,对http服务器发送请求的request对象就是一个stream,还有stdout(标准输出)
+ *四种类型:readable writable duplex(可读可写) transform(操作被写入数据,读出结果)
+ *   所有stream对象都是EventEmitter的实例.
+ *常用事件:data(有可读数据时触发) end(没有更多可读数据时触发) error(在接受和写入的过程中报错时触发) finish(所有数据已被写入到底层系统时候触发).
+ *
+ * */

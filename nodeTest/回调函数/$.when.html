@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script src="lib/jquery190.js"></script>
+<script type="text/javascript">
+    /*1.5.0版本以上的jquery引入Deferred对象. $.ajax()在之前返回xhr对象,之后返回deferred对象.
+    * */
+   // 链式调用
+   // 为同一个事件 动态添加回调函数
+    $.when($.ajax('./text.html'))
+            .done(function () {
+
+            })
+            .fail(function () {
+
+            })
+            .done(function () {
+
+            })
+    //为多个事件 添加回调函数.deferred对象全部为完成状态时,执行done反之,fail.
+    $.when($.ajax('./text.html'),$.ajax('./text2.html'))
+            .done(function () {
+
+            })
+            .fail(function () {
+
+            })
+
+
+    //创建Deferred对象.
+    var dfd= $.Deferred();
+    $.when(dfd)
+            .done(function () {
+                alert('success');
+            })
+            .fail(function () {
+                alert('failed')
+            })
+    //$.when方法监听Deferred对象的状态,当dfd.resolve()的时候dfd从'未完成'到'完成',当dfd.reject()从'未完成'到'失败'.状态不可逆
+    /* dfd.resolve();
+       dfd.reject();*/
+
+    //以上写法Deferred对象为全局,可以被外部修改,于是引用deferred.promise()方法.返回只开放 与改变执行状态无关 的方法（比如done()方法和fail()方法)的
+    // deferred对象
+
+
+    var dtd = $.Deferred(); // 生成Deferred对象
+    var wait = function (dtd) {
+        var tasks = function () {
+            alert("执行完毕！");
+            dtd.resolve(); // 改变Deferred对象的执行状态
+        };
+        setTimeout(tasks, 5000);
+    };
+    dtd.promise(wait);//dtd.promise(wait)这一行，它的作用就是在wait对象上部署Deferred接口。正是因为有了这一行，后面才能直接在wait上面调用done()和fail()。
+    wait
+            .done(function () {
+        alert("哈哈，成功了！");
+    })
+            .fail(function () {
+                alert("出错啦！");
+            });
+    wait(dtd);
+</script>
+</html>

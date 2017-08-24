@@ -1,0 +1,25 @@
+{
+  "name": "pservice",
+  "version": "0.0.0",
+  "description": "pservice",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.alipay-inc.com:wb-lvchuntian/pservice.git"
+  },
+  "scripts": {
+    "build": "webpack -p"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
+  },
+  "licenses": "MIT"
+}

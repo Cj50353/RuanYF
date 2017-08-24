@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    //获取倒数第五个
+    function get5t(){
+        var linedata=[];
+        var workLoads=[];
+        var len = linedata.length, i = len - 1;
+        if (len > 5) {
+            for (; len <= i + 5; i--) {
+                workLoads.unshift(linedata[i].workLoad);
+            }
+        }
+        else {
+            for (; i >= 0; i--) {
+                workLoads.unshift(linedata[i].workLoad);
+            }
+        }
+    }
+    //
+</script>
+</html>

@@ -1,0 +1,6 @@
+1,react 使用jsx语法,使用text/babel类型
+2,浏览器端支持babel需要导入browser.js
+3,jsx语法中使用html标签的时候,最外层只能有一个标签
+4,使用ReactDOM.render(<Hello></Hello>, document.getElementById("a"));将虚拟dom解析到实际dom里面
+5,虚拟dom上面有个data-reactroot属性
+6,es6的语法var没有变量提升

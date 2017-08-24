@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<lable>标签</lable>
+<div class="tag">
+    <input type="text" value="" width="500" class="tag">
+    <select class="tagSelect" hidden>
+        <option value="1">a</option>
+        <option value="2">b</option>
+        <option value="3">c</option>
+    </select>
+</div>
+</body>
+<script src="../../lib/jquery190.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document ).ready(
+        $("body" ).delegate(".tag","click", function () {
+            //下拉标签栏
+            $(".tagSelect" ).show();
+        } ).delegate(".tagSelect>option","click", function () {
+
+        })
+    )
+</script>
+</html>
